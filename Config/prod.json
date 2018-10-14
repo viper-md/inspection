@@ -1,14 +1,14 @@
 {
     "PORT": "3000",
-    "APP_NAME": "localhost",
-    "swaggerLink2": "http://localhost:3000/swagger/",
-    "swaggerLink": "http://54.234.227.245/api",
-    "projectName": "live-chat",
+    "APP_NAME": "production",
+    "swaggerLink2": "http://18.207.194.130/swagger/",
+    "swaggerLink": "http://18.207.194.130/api",
+    "projectName": "inspection",
     "databaseSettings": {
-        "host": "localhost",
-        "user": "root",
-        "password": "mukul@007",
-        "database": "production",
+        "host": "company.cy821g94ocee.us-east-1.rds.amazonaws.com",
+        "user": "inspector",
+        "password": "dummyinspector007",
+        "database": "company",
         "port": "3306",
         "mongo_db_connection": "",
         "redis": {

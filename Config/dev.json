@@ -3,7 +3,7 @@
     "APP_NAME": "localhost",
     "swaggerLink2": "http://localhost:3000/swagger/",
     "swaggerLink": "http://localhost:3000/api",
-    "projectName": "live-chat",
+    "projectName": "inspection",
     "databaseSettings": {
         "host": "localhost",
         "user": "root",
