@@ -1,0 +1,108 @@
+resourcePath: /v1
+description: authorise_user
+apis:
+
+- path: /v1/authorise_user
+  operations:
+
+    - httpMethod: POST
+      summary: create_chat
+      notes:  Manadatory Params(email,password,first_name,last_name, user_role_id (1=>inspector, 2=> admin)). This api provides access_token
+      nickname: authorise_user
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: body
+        dataType: body
+        defaultValue: '{
+                          "email":"mukul123@yopmail.com",
+                          "user_role_id":"2",
+                          "password":"abc007",
+                          "first_name":"mukul",
+                          "last_name":"devrani",
+                          "device_type" : "WEB",
+                          "device_name" : "safari",
+                          "app_version":  "1.1",
+                          "latitude" : "",
+                          "longitude" : ""
+                       }'
+        paramType: body
+        required: true
+        description:
+      responses:
+        200:
+         description: app structure json
+
+- path: /v1/add_inspection
+  operations:
+
+    - httpMethod: POST
+      summary: create_chat
+      notes:  Manadatory Params  (venue_type_id,description,latitude,longitude,status('PENDING', 'STARTED', 'APPROVED', 'REJECTED),inspector_email)
+      nickname: register_user
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: body
+        dataType: body
+        defaultValue: '{
+                          "access_token":"",
+                          "venue_type_id":"1",
+                          "description":"some description about houses",
+                          "latitude":"23.03386300",
+                          "longitude":"72.58502200",
+                          "status":"PENDING",
+                          "inspector_email":"marking@yopmail.com",
+                          "inspector_first_name":"corp",
+                          "inspector_last_name":"md",
+                          "inspection_start_time":"",
+                          "device_type" : "WEB",
+                          "device_name" : "mozilla",
+                          "app_version":  "1.1"
+                       }'
+        paramType: body
+        required: true
+        description:
+      responses:
+        200:
+         description: app structure json
+
+- path: /v1/paginate_inspection_list
+  operations:
+
+    - httpMethod: POST
+      summary: create_chat
+      notes:  Manadatory Param (access_token). search_term (to search indexed columns such as description, email,first_name, last_name), status_filter('PENDING', 'STARTED', 'APPROVED', 'REJECTED), venue_filter (1=>HOME,2=>OFFICE,3=>VEHICLE). For filtering via latitude and longitude pass (latitude, longitude, radius_to_search) , To search between date range pass (stat_date,end_date) keep end_date blank when search for a particular day. sorting supported by inspection_start_time (asc, desc , defaultValue=asc) 
+      nickname: register_user
+      consumes:
+        - application/json
+      parameters:
+      - in: body
+        name: body
+        dataType: body
+        defaultValue: '{
+                          "current_page":"0",
+                          "limit":"10",
+                          "access_token":"",
+                          "search_term":"",
+                          "status_filter":"",
+                          "venue_filter" : "",
+                          "latitude":"23.03386300",
+                          "longitude":"72.58502200",
+                          "radius_to_search":"10",
+                          "start_date":"2018-10-15",
+                          "end_date":"2018-10-15",
+                          "sorting_order":"asc",
+                          "status":"PENDING",
+                          "device_type" : "WEB",
+                          "device_name" : "chrome ",
+                          "app_version":  "1.1"
+                       }'
+        paramType: body
+        required: true
+        description:
+      responses:
+        200:
+         description: app structure json
